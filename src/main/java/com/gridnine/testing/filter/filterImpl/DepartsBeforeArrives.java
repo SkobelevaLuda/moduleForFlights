@@ -1,4 +1,4 @@
-package com.gridnine.testing.filterImpl;
+package com.gridnine.testing.filter.filterImpl;
 
 import com.gridnine.testing.filter.FlightFilter;
 import com.gridnine.testing.flight.Flight;
@@ -13,8 +13,7 @@ public class DepartsBeforeArrives implements FlightFilter {
     public boolean check(Flight flight) {
         if (flight.getSegments().size() == 1) {
 
-            LocalDateTime dep;
-            dep = flight.getSegments().get(0).getDepartureDate();
+            LocalDateTime dep = flight.getSegments().get(0).getDepartureDate();
             LocalDateTime arr = flight.getSegments().get(0).getArrivalDate();
 
             if (dep.isAfter(arr)) {

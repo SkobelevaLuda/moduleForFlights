@@ -1,4 +1,4 @@
-package com.gridnine.testing.filterImpl;
+package com.gridnine.testing.filter.filterImpl;
 
 import com.gridnine.testing.filter.FlightFilter;
 import com.gridnine.testing.flight.Flight;
@@ -11,7 +11,7 @@ import java.util.List;
 public class MoreTwoHoursGroundTime implements FlightFilter {
     @Override
     public boolean check(Flight flight) {
-        // Multi segment flight
+
         if (flight.getSegments().size() > 1) {
             List<Segment> segmentList = flight.getSegments();
             long groundTime = 0;
