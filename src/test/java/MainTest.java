@@ -1,10 +1,12 @@
 import com.gridnine.testing.filter.FlightFilter;
 
-import com.gridnine.testing.filter.filterImpl.DepartsBeforeArrives;
-import com.gridnine.testing.filter.filterImpl.MoreTwoHoursGroundTime;
+import com.gridnine.testing.filter_impls.DepartsBeforeArrives;
+import com.gridnine.testing.filter_impls.MoreTwoHoursGroundTime;
+import com.gridnine.testing.filter_impls.DepartingInPast;
 import com.gridnine.testing.flight.Flight;
 import com.gridnine.testing.flight.FlightBuilder;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.springframework.util.Assert;
 
 
 import java.util.List;
@@ -13,7 +15,7 @@ public class MainTest {
 
     @Test
     public void flightsCountAfterDepartingInPastFilterShouldBeOneLess() {
-        FlightFilter flightFilter = new DepartingPast();
+        FlightFilter flightFilter = new DepartingInPast();
         long actual = flights.stream().filter(flightFilter::check).count();
         int expected = flights.size() - 1;
         Assert.isTrue(expected == actual,

@@ -5,6 +5,7 @@ import com.gridnine.testing.flight.Flight;
 import java.util.List;
 
 public class FlightFilters {
+
     private FlightFilters() {
     }
 

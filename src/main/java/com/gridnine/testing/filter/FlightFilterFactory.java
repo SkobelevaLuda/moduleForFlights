@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class FlightFilterFactory {
+
     private static final FlightFilterFactory INSTANCE;
     private static final String PACKAGE = "com.gridnine.testing.filter_impls.";
     private static final File PROPERTY_FILE = new File("application.yaml");
@@ -46,6 +47,7 @@ public class FlightFilterFactory {
             Log.error("Flights are shown without filters: !!!\"", e);
         }
     }
+
     private void addFlightFilter(String flightFilter) {
         try {
             flightFilters.add((FlightFilter)
@@ -54,9 +56,9 @@ public class FlightFilterFactory {
             Log.info("Filter: " + flightFilter);
 
         } catch (InstantiationException | IllegalAccessException |
-                 IllegalArgumentException | InvocationTargetException |
-                 NoSuchMethodException | SecurityException |
-                 ClassNotFoundException e) {
+                IllegalArgumentException | InvocationTargetException |
+                NoSuchMethodException | SecurityException |
+                ClassNotFoundException e) {
             Log.error("Filter: " + flightFilter +
                     " - Invalid filter name. Filter not applied. " +
                     "Check Application.yaml !!!", e);

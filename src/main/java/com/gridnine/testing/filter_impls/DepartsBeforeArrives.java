@@ -1,18 +1,18 @@
-package com.gridnine.testing.filter.filterImpl;
+package com.gridnine.testing.filter_impls;
 
 import com.gridnine.testing.filter.FlightFilter;
 import com.gridnine.testing.flight.Flight;
+import com.gridnine.testing.flight.Segment;
 
-import javax.swing.text.Segment;
 import java.time.LocalDateTime;
 import java.util.List;
 
-
 public class DepartsBeforeArrives implements FlightFilter {
+
     @Override
     public boolean check(Flight flight) {
         if (flight.getSegments().size() == 1) {
-
+            // One segment flight
             LocalDateTime dep = flight.getSegments().get(0).getDepartureDate();
             LocalDateTime arr = flight.getSegments().get(0).getArrivalDate();
 
@@ -20,7 +20,7 @@ public class DepartsBeforeArrives implements FlightFilter {
                 return false;
             }
         } else {
-            // Multi segment flight
+
             List<Segment> segmentList = flight.getSegments();
 
             for (int i = 0; i < segmentList.size() - 1; i++) {
@@ -35,5 +35,4 @@ public class DepartsBeforeArrives implements FlightFilter {
         }
         return true;
     }
-
 }

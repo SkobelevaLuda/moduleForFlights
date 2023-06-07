@@ -1,9 +1,11 @@
 package com.gridnine.testing.flight;
 
-import javax.swing.text.Segment;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Bean that represents a flight.
+ */
 public class Flight {
     private final List<Segment> segments;
 
@@ -18,6 +20,6 @@ public class Flight {
     @Override
     public String toString() {
         return segments.stream().map(Object::toString)
-                .collect(Collectors.joining(" "));
+            .collect(Collectors.joining(" "));
     }
 }
