@@ -8,7 +8,6 @@ public class FlightFilters {
 
     private FlightFilters() {
     }
-
     public static boolean check(Flight flight) {
 
         List<FlightFilter> filters = FlightFilterFactory

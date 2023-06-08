@@ -12,7 +12,7 @@ public class DepartsBeforeArrives implements FlightFilter {
     @Override
     public boolean check(Flight flight) {
         if (flight.getSegments().size() == 1) {
-            // One segment flight
+
             LocalDateTime dep = flight.getSegments().get(0).getDepartureDate();
             LocalDateTime arr = flight.getSegments().get(0).getArrivalDate();
 
