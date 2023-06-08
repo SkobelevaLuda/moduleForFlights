@@ -7,15 +7,6 @@
 
 Постановка задачи — ниже на этой странице
 
-
-## Сборка приложения
-
-git clone https://github.com/evteev777/FlightFilter.git \
-cd FlightFilter \
-mvn package \
-cp application.yaml target \
-cd target
-
 ## Настройка
 
 Приложение может получать набор фильтров из файла application.yaml
